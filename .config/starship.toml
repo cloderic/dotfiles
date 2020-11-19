@@ -1,0 +1,14 @@
+# Configuration documentation is here https://starship.rs/config/
+
+[directory]
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+
+[aws]
+disabled = true
+
+[python]
+symbol=" "
+
