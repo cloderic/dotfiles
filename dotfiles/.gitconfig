@@ -1,3 +1,5 @@
+[core]
+excludesfile = ~/.gitignore_global
 [user]
 name = Clodéric Mars
 email = cloderic@hey.com
@@ -5,3 +7,5 @@ email = cloderic@hey.com
 insteadOf = https://github.com/
 [url "git@gitlab.com:"]
 insteadOf = https://gitlab.com/
+[init]
+defaultBranch = main
