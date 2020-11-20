@@ -22,6 +22,3 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# pyenv setup
-eval "$(pyenv init -)"

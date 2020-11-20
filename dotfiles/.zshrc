@@ -1,5 +1,4 @@
 # Automatically run `nvm use` if a .nvmrc is detected.
-
 autoload -U add-zsh-hook
 load-nvmrc() {
   local node_version="$(nvm version)"
@@ -20,6 +19,9 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# pyenv setup
+eval "$(pyenv init -)"
 
 # starship prompt setup
 eval "$(starship init zsh)"
