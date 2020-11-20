@@ -14,7 +14,7 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # poetry setup
-export PATH="$HOME/.poetry/bin:$PATH"
+source $HOME/.poetry/env
 
 # golang setup
 export PATH="$(go env GOPATH)/bin:$PATH"
