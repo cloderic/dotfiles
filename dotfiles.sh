@@ -5,6 +5,7 @@ CFG_BACKUP_DIR=${CFG_SOURCE_DIR}/backup
 
 CFG_FILES=(
   ".config/starship.toml"
+  ".ssh/config"
   ".gitconfig"
   ".gitignore_global"
   ".nanorc"
@@ -91,7 +92,7 @@ case ${command} in
       source_file="${CFG_SOURCE_DIR}/${cfg_file}"
       installed_file="${CFG_INSTALL_DIR}/${cfg_file}"
       if [[ -f "${installed_file}" ]]; then
-        mkdir -p "$(dirname "${installed_file}")"
+        mkdir -p "$(dirname "${source_file}")"
         cp "${installed_file}" "${source_file}"
         printf "✅ \`%s\` retrieved from \`%s\`\n" "${source_file}" "${installed_file}"
       else
