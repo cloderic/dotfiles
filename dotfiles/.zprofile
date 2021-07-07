@@ -22,3 +22,8 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# gcloud setup
+GOOGLE_CLOUD_SDK_DIR="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
+source "${GOOGLE_CLOUD_SDK_DIR}/path.zsh.inc"
+source "${GOOGLE_CLOUD_SDK_DIR}/completion.zsh.inc"
