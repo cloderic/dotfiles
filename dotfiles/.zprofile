@@ -13,8 +13,13 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # cargo setup
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# pyenv shims
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+
 # poetry setup
-source $HOME/.poetry/env
+export PATH="$HOME/.local/bin:$PATH"
 
 # golang setup
 export PATH="$(go env GOPATH)/bin:$PATH"
