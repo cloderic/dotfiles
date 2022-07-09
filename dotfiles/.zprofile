@@ -1,11 +1,11 @@
 ## Here goes everything changing environment variables such as PATH or EDITOR
 
+# Homebrew path setup
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # custom commands
 export EDITOR=nano
 alias ls="exa -l"
-
-# Homebrew sbin path
-export PATH="/usr/local/sbin:$PATH"
 
 # Homebrew JDK setup
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
@@ -14,24 +14,39 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # pyenv shims
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+if command -v pyenv &>/dev/null; then
+  eval "$(pyenv init --path)"
+fi
 
 # poetry setup
 export PATH="$HOME/.local/bin:$PATH"
 
 # golang setup
-export PATH="$(go env GOPATH)/bin:$PATH"
+if command -v go &>/dev/null; then
+  export PATH="$(go env GOPATH)/bin:$PATH"
+fi
 
 # flutter setup
 export PATH="$HOME/flutter/bin:$PATH"
 
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+mkdir -p "$NVM_DIR"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh" # This loads nvm
 
 # gcloud setup
 GOOGLE_CLOUD_SDK_DIR="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk"
-source "${GOOGLE_CLOUD_SDK_DIR}/path.zsh.inc"
-source "${GOOGLE_CLOUD_SDK_DIR}/completion.zsh.inc"
+if [ -d "${GOOGLE_CLOUD_SDK_DIR}" ]; then
+  source "${GOOGLE_CLOUD_SDK_DIR}/path.zsh.inc"
+  source "${GOOGLE_CLOUD_SDK_DIR}/completion.zsh.inc"
+fi
+
+# Source tree setup
+if [ -d "/Applications/SourceTree.app" ]; then
+  alias stree="/Applications/SourceTree.app/Contents/Resources/stree"
+fi
+
+# Visual studio code
+if [ -d "/Applications/Visual Studio Code.app" ]; then
+  alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+fi
