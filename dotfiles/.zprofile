@@ -24,6 +24,9 @@ export PATH="$HOME/.local/bin:$PATH"
 # golang setup
 export PATH="$(go env GOPATH)/bin:$PATH"
 
+# flutter setup
+export PATH="$HOME/flutter/bin:$PATH"
+
 # NVM setup
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
