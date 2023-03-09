@@ -39,3 +39,8 @@ fi
 # setup completion
 autoload -U compinit
 compinit
+
+# setup kubectl completion
+if command -v kubectl &>/dev/null; then
+  source <(kubectl completion zsh)
+fi
