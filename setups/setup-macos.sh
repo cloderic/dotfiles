@@ -8,4 +8,4 @@ defaults write com.apple.screencapture location -string "~/Downloads"
 defaults write com.apple.screencapture type -string "png"
 
 # Install a few packages
-brew install starship exa nvm uv
+brew install starship eza nvm uv

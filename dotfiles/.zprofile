@@ -5,7 +5,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # custom commands
 export EDITOR=nano
-alias ls="exa -l"
+alias ls="eza -l"
 
 # Homebrew JDK setup
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
