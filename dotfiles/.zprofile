@@ -13,11 +13,6 @@ export PATH="/usr/local/opt/openjdk/bin:$PATH"
 # cargo setup
 export PATH="$HOME/.cargo/bin:$PATH"
 
-# pyenv shims
-if command -v pyenv &>/dev/null; then
-  eval "$(pyenv init --path)"
-fi
-
 # poetry setup
 export PATH="$HOME/.local/bin:$PATH"
 

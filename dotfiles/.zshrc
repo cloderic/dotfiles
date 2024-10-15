@@ -22,11 +22,6 @@ if command -v nvm &>/dev/null; then
   load-nvmrc
 fi
 
-# pyenv setup
-if command -v pyenv &>/dev/null; then
-  eval "$(pyenv init -)"
-fi
-
 # starship prompt setup
 if command -v starship &>/dev/null; then
   eval "$(starship init zsh)"
@@ -43,4 +38,9 @@ compinit
 # setup kubectl completion
 if command -v kubectl &>/dev/null; then
   source <(kubectl completion zsh)
+fi
+
+# setup uv completion
+if command -v uv &>/dev/null; then
+  source <(uv generate-shell-completion zsh)
 fi
